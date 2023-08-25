@@ -1,6 +1,6 @@
 <html>
-<head>
 
+<head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG193V45LH"></script>
 <script>
@@ -12,11 +12,22 @@
 </script>
 
 
+<!--Email JS Integration-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("3FaQ1e3YFn4Xdnj5B");
+  })();
+</script>
 
-
+    <!-- CSS and JS Reference -->
+    <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
 </head>
+
 <body>
 <!-----Header Section-->
 <header>
@@ -30,6 +41,7 @@
     </ul>
     <div class="bx bx-menu" id="menu-icon"></div>
 </header>
+
     <!--  Home Section  -->
      <section class="home" id="home">
         <div class="home-text">
@@ -116,18 +128,15 @@
 
     </div>
 
-
         <div class="contact-form">
-            <form action="">
-                <input type="name" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="number" placeholder="Your Mobile Number" required>
-                <textarea name="" id="" cols="35" rows="10" placeholder="How Can I Help You " required></textarea>
-                <input type="submit" value="Send Message" class="submit" required>
+            <form id = "form">
+                <input type="text" name="from_name" placeholder="Your Name" onchange="SendValues(this)" required>
+                <input type="text" name="from_email" placeholder="Your Email" onchange="SendValues(this)" required>
+                <input type="text" name="from_mobile" placeholder="Your Mobile Number" onchange="SendValues(this)" required>
+                <textarea type="text" name="from_message" cols="35" rows="10" placeholder="How Can I Help You " onchange="SendValues(this)" required></textarea>
+                <input type="submit" value="Send Message" class = "submit" onclick="SendEmail()" required>
             </form>
         </div>
      </section>
-     
-
 </body>
 </html>
