@@ -262,6 +262,11 @@ section {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2.5rem;
+
+    height: 648px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
 .contact-text h4 {

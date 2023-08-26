@@ -1,6 +1,6 @@
 <html>
-
 <head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG193V45LH"></script>
 <script>
@@ -12,21 +12,26 @@
 </script>
 
 
-<!--Email JS Integration-->
+
+<!--Email Js Integration-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
 <script type="text/javascript">
   (function() {
-    emailjs.init("3FaQ1e3YFn4Xdnj5B");
+    emailjs.init("3FaQ1e3YFn4Xdnj5B"); //please encrypted user id for malicious attacks
   })();
 </script>
 
-    <!-- CSS and JS Reference -->
+
+
+<!-- CSS and JS Reference -->
     <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
 </head>
+
+
 
 <body>
 <!-----Header Section-->
@@ -41,7 +46,6 @@
     </ul>
     <div class="bx bx-menu" id="menu-icon"></div>
 </header>
-
     <!--  Home Section  -->
      <section class="home" id="home">
         <div class="home-text">
@@ -128,13 +132,14 @@
 
     </div>
 
+
         <div class="contact-form">
             <form id = "form">
-                <input type="text" name="from_name" placeholder="Your Name" onchange="SendValues(this)" required>
-                <input type="text" name="from_email" placeholder="Your Email" onchange="SendValues(this)" required>
-                <input type="text" name="from_mobile" placeholder="Your Mobile Number" onchange="SendValues(this)" required>
-                <textarea type="text" name="from_message" cols="35" rows="10" placeholder="How Can I Help You " onchange="SendValues(this)" required></textarea>
-                <input type="submit" value="Send Message" class = "submit" onclick="SendEmail()" required>
+                <input type="text" placeholder="Your Name" id="from_name" required>
+                <input type="text" placeholder="Your Email" id ="from_email" required>
+                <input type="text" placeholder="Your Mobile Number" id ="from_mobile" required>
+                <textarea type="text" id="from_message_data" cols="35" rows="10" placeholder="How Can I Help You " required></textarea>
+                <input type="submit" value="Send Message" id = "button" onclick="SendEmail()" required>
             </form>
         </div>
      </section>
