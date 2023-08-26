@@ -10,13 +10,27 @@ function SendEmail(){
         from_mobile : document.getElementById("from_mobile").value,
         from_message : document.getElementById("from_message_data").value
       };
+
+      if (!templateParams.from_name || !templateParams.from_email || !templateParams.from_message) 
+      {
+        alert("Please fill in all required fields before submitting.");
+        return; // Don't proceed if any required field is empty
+      }
     
       emailjs.send('service_5qxc8g9', 'template_8pnt5pf', templateParams)
-        .then(function(response) {
+        .then(function(response) 
+        {
           console.log('SUCCESS!', response.status, response.text);
-        }, function(error) {
+        }, function(error) 
+        {
           console.log('FAILED...', error);
-});
+        });
+
+        // Clear the input fields after submission
+        document.getElementById("from_name").value = "";
+        document.getElementById("from_email").value = "";
+        document.getElementById("from_mobile").value = "";
+        document.getElementById("from_message_data").value = "";
 }
 
 
